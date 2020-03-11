@@ -67,4 +67,13 @@ public class Herokuapp extends BasePage {
         String fileUpload = driver.findElement(By.id("uploaded-files")).getText();
         assertEquals(fileUpload, "Котик.jpg", "Error!");
     }
+
+    public void openIFrame() {
+        driver.findElement(By.xpath("//*[@id=\"content\"]/div/ul/li[2]/a")).click();
+    }
+
+    public void verificationIFrame() {
+        String iFrame = driver.findElement(By.id("tinymce")).getText();
+        assertEquals(iFrame, "Your content goes here.", "Error!");
+    }
 }
