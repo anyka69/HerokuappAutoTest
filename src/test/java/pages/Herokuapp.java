@@ -56,4 +56,15 @@ public class Herokuapp extends BasePage {
         String disable = driver.findElement(By.id("message")).getText();
         assertEquals(disable, "It's disabled!", "Error!");
     }
+
+    public void fileUpload(String url) {
+        WebElement browse = driver.findElement(By.name("file"));
+        browse.sendKeys(System.getProperty("user.dir") + url);
+        driver.findElement(By.id("file-submit")).click();
+    }
+
+    public void verificationFileUpload() {
+        String fileUpload = driver.findElement(By.id("uploaded-files")).getText();
+        assertEquals(fileUpload, "Котик.jpg", "Error!");
+    }
 }
