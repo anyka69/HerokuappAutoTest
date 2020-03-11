@@ -27,5 +27,4 @@ public class Herokuapp extends BasePage {
         assertEquals(element,"You selected a context menu","Error");
         alert.accept();
     }
-
 }
